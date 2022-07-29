@@ -4,7 +4,6 @@
 #[cfg(not(target_os = "nanos"))]
 fn main() {}
 
-#[cfg(target_os = "nanos")]
-mod main_nanos;
-#[cfg(target_os = "nanos")]
-pub use main_nanos::*;
+use rust_app::*;
+
+nanos_sdk::set_panic!(nanos_sdk::exiting_panic);
